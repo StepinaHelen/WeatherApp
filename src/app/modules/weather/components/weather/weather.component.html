@@ -1,0 +1,22 @@
+<div class="search">
+  <form (submit)="onSubmit()">
+    <input type="text" placeholder="Search city" name="city" [(ngModel)]="cityName">
+  </form>
+</div>
+
+<div class="container" *ngIf="weatherData">
+  <div class="upper-data">
+    <img src="../../../../../assets/cold.jpg" alt="cold-evening" *ngIf="weatherData.main.temp < 15">
+    <img src="../../../../../assets/hot.jpg" alt="hot-morning" *ngIf="weatherData.main.temp >= 15" />
+    <div class="weather-data">
+      <p class="location">{{weatherData.name}}</p>
+      <p class="temperature">{{ weatherData.main.temp | number: '1.0-0' }}°C</p>
+    </div>
+  </div>
+  <div class="lower-data">
+    <p class="more-info-label">
+      More Information
+    </p>
+    <app-weather-properties-list [weatherData]="weatherData"></app-weather-properties-list>
+  </div>
+</div>

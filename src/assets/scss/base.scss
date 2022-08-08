@@ -1,0 +1,28 @@
+@import "./variables.scss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient($blue-1, #7b2ebf);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  body {
+   font-size: 18px;
+  }
+}
+@media (min-width: 980px) {
+  body {
+   font-size: 24px;
+  }
+}
